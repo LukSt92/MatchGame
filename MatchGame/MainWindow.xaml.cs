@@ -30,7 +30,7 @@ namespace MatchGame
             InitializeComponent();
 
 
-            timer.Interval = TimeSpan.FromSeconds(0.01);
+            timer.Interval = TimeSpan.FromSeconds(0.1);
             timer.Tick += Timer_Tick;
             SetUpGame();
         }
@@ -65,6 +65,7 @@ namespace MatchGame
             {
                 if (textBlock.Name != "timeTextBlock")
                 {
+                    textBlock.Visibility = Visibility.Visible;
                     int index = random.Next(animalEmoji.Count);
                     string nextEmoji = animalEmoji[index];
                     textBlock.Text = nextEmoji;
